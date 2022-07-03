@@ -15,6 +15,10 @@ import {
 import NativeBaseIcon from "./components/NativeBaseIcon";
 import { Platform } from "react-native";
 
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Router from "./Router";
+
 // Define the config
 const config = {
   useSystemColorMode: false,
@@ -27,7 +31,7 @@ export const theme = extendTheme({ config });
 export default function App() {
   return (
     <NativeBaseProvider>
-      <Center
+      {/* <Center
         _dark={{ bg: "blueGray.900" }}
         _light={{ bg: "blueGray.50" }}
         px={4}
@@ -61,7 +65,11 @@ export default function App() {
           </Link>
           <ToggleDarkMode />
         </VStack>
-      </Center>
+      </Center> */}
+
+      <NavigationContainer>
+        <Router />
+      </NavigationContainer>
     </NativeBaseProvider>
   );
 }
